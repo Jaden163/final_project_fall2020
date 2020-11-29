@@ -1,38 +1,321 @@
 .App {
+  background-color: #181a1b;
+}
+
+/* Thematic Default Stylings */
+.Color {
+  color: #ff4655;
+}
+
+.Anchor_Button {
+  appearance: button;
+  color: white;
+  border: 1px solid #ff4655;
+  background-color: #ff4655;
+  border-radius: 25px;
+  font-size: 20px;
+  font-weight: 600;
+  height: 40px;
+  line-height: 200%;
+  text-align: center;
+  text-decoration: none;
+  width: 125px;
+}
+
+.Anchor_Button_Invis {
+  appearance: button;
+  color: white;
+  border: 1px solid #ff4655;
+  border-radius: 25px;
+  font-size: 20px;
+  font-weight: 600;
+  height: 40px;
+  line-height: 200%;
+  text-align: center;
+  text-decoration: none;
+  width: 125px;
+}
+
+/* Header Styling */
+.Header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1080px;
+  padding: 0 25px;
+}
+
+.Header a {
+  text-decoration: none;
+}
+
+.Header nav a {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+/* Home.js Styling */
+.Home {
+  color: white;
+  font-family: "Capsule Sans Text", sans-serif;
+  margin: 0 auto;
+  max-width: 1080px;
+  padding: 0 25px;
+}
+
+.HeroSection {
+  display: flex;
+  height: 80vh;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 0;
+}
+
+.HeroSection_Left {
+  /* border: 2px solid black; */
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
+  font-size: 25px;
+  margin: 0;
+  text-align: left;
+}
+
+.HeroSection_Left_Title {
+  margin: 0px;
+  margin-bottom: 40px;
+}
+
+.HeroSection_Left_Title_Content {
+  font-size: 40px;
+  font-weight: 600;
+  margin: 0px;
+}
+
+.HeroSection_Left_Details_Content {
+  font-size: 30px;
+  font-weight: 400;
+  margin: 0px;
+}
+
+.HeroSection_Left_Details {
+  margin: 0px;
+  margin-bottom: 40px;
+}
+
+.HeroSection_Right {
+  /* border: 2px solid black; */
+  display: flex;
+  flex-basis: 50%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* SignUp Styling */
+.SignUp {
   color: white;
+  font-family: "Capsule Sans Text", sans-serif;
+  margin: 0 auto;
+  max-width: 1080px;
+  padding: 0 25px;
 }
 
-.App-link {
-  color: #61dafb;
+.SignUp_Page_Wrapper {
+  display: table;
+  height: 100%;
+  margin: 0 auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.SignUp_Form_Wrapper {
+  height: 90vh;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.SignUp_Form_Container {
+  padding: 50px;
+  border: 2px solid #464a4c;
+  border-radius: 4px;
+}
+
+.SignUp_Form {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.SignUp_Form_Div {
+  display: block;
+  margin: 0;
+  margin-bottom: 25px;
+}
+
+.SignUp_Form_Title {
+  font-size: 30px;
+  font-weight: 900;
+  margin: 0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.SignUp_Form_Input {
+  height: 15px;
+  border: 2px solid #464a4c;
+  border-radius: 4px;
+  font-size: 15px;
+  outline: none;
+  padding: 10px 10px;
+  width: 300px;
+}
+
+.SignUp_Form_Input:focus {
+  border: 2px solid #ff4655;
+}
+
+.SignUp_Form_Button {
+  color: white;
+  border: 1px solid #ff4655;
+  background-color: #ff4655;
+  border-radius: 4px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 200%;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+}
+
+.SignUp_Form_Seperator {
+  border-top: 2px solid #464a4c;
+  margin: 0;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.SignUp_Form_TextInSeperator {
+  background-color: #181a1b;
+  padding: 0 10px;
+  position: relative;
+  top: -10px;
+}
+
+.SignUp_Form_Anchor_Button {
+  color: white;
+  border: 1px solid #ff4655;
+  background-color: #26292b;
+  border-radius: 4px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 200%;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+}
+
+/* LogIn Styling */
+.LogIn {
+  color: white;
+  font-family: "Capsule Sans Text", sans-serif;
+  margin: 0 auto;
+  max-width: 1080px;
+  padding: 0 25px;
+}
+
+.LogIn_Page_Wrapper {
+  display: table;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.LogIn_Form_Wrapper {
+  height: 90vh;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.LogIn_Form_Container {
+  padding: 50px;
+  border: 2px solid #464a4c;
+  border-radius: 4px;
+}
+
+.LogIn_Form {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.LogIn_Form_Div {
+  display: block;
+  margin: 0;
+  margin-bottom: 25px;
+}
+
+.LogIn_Form_Title {
+  font-size: 30px;
+  font-weight: 900;
+  margin: 0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.LogIn_Form_Input {
+  height: 15px;
+  border: 2px solid #464a4c;
+  border-radius: 4px;
+  font-size: 15px;
+  outline: none;
+  padding: 10px 10px;
+  width: 300px;
+}
+
+.LogInForm_Input:focus {
+  border: 2px solid #ff4655;
+}
+
+.LogIn_Form_Button {
+  color: white;
+  border: 1px solid #ff4655;
+  background-color: #ff4655;
+  border-radius: 4px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 200%;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+}
+
+.LogIn_Form_Seperator {
+  border-top: 2px solid #464a4c;
+  margin: 0;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.LogIn_Form_TextInSeperator {
+  background-color: #181a1b;
+  padding: 0 10px;
+  position: relative;
+  top: -10px;
+}
+
+.LogIn_Form_Anchor_Button {
+  color: white;
+  border: 1px solid #ff4655;
+  background-color: #26292b;
+  border-radius: 4px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 200%;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
 }
