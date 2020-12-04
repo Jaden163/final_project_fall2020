@@ -13,6 +13,8 @@ import "./App.css";
 import Home from "./containers/Home";
 import SignUp from "./containers/SignUp";
 import LogIn from "./containers/LogIn";
+import UserProfile from "./containers/UserProfile";
+
 import Header from "./components/Header";
 
 const firebaseConfig = {
@@ -85,6 +87,9 @@ function App() {
         <Switch>
           <Route path="/signup">
             <SignUp SignUpFunction={SignUpFunction} />
+          </Route>
+          <Route path="/user">
+            <UserProfile />
           </Route>
           <Route path="/login">
             <LogIn LogInFunction={LogInFunction} />
