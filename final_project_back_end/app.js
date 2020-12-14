@@ -3,7 +3,7 @@ const app = express();
 const port = process.env.PORT || 4000;
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDgYObNPZGh10Id8V3XQ7xeVTBmsK0r6Vk",
+  apiKey: process.env.REACT_APP_FIREBASE_APIKEY,
   authDomain: "idm-finalproject-fall2020.firebaseapp.com",
   databaseURL: "https://idm-finalproject-fall2020.firebaseio.com",
   projectId: "idm-finalproject-fall2020",
