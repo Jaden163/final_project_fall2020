@@ -2,11 +2,11 @@ import React from "react";
 
 function LogInForm({ LogInFunction }) {
   return (
-    <div className="LogIn_Page_Wrapper">
+    <main className="LogIn_Page_Wrapper">
       <div className="LogIn_Form_Wrapper">
         <div className="LogIn_Form_Container">
           <p className="LogIn_Form_Title">
-            Start <span className="Color">Chatting</span>
+            <span className="Color">Welcome</span> Back
           </p>
           <form className="LogIn_Form" onSubmit={(e) => LogInFunction(e)}>
             <div className="LogIn_Form_Div">
@@ -49,7 +49,7 @@ function LogInForm({ LogInFunction }) {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 }
 

@@ -1,12 +1,8 @@
 import React, { useEffect, useState } from "react";
-import {
-  Route,
-  BrowserRouter as Router,
-  Redirect,
-  Switch,
-} from "react-router-dom";
+import { Route, BrowserRouter as Router, Redirect } from "react-router-dom";
 import firebase from "firebase/app";
 import "firebase/auth";
+import axios from "axios";
 
 import "./App.css";
 
@@ -40,6 +36,19 @@ function App() {
     }
   }, [firebaseConfig]);
 
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged(function (user) {
+      // check if user login
+      if (user) {
+        setLoggedIn(true);
+        setUserInfo(user);
+      } else {
+        setLoggedIn(false);
+      }
+      setLoading(false);
+    });
+  }, []);
+
   // login func
   function LogInFunction(e) {
     // stop form from submitting as normal
@@ -51,16 +60,26 @@ function App() {
       .auth()
       .signInWithEmailAndPassword(email, password)
       .then(function (response) {
-        console.log("LOGIN RESPONSE", response);
         setLoggedIn(true);
       })
       .catch(function (error) {
-        console.log("LOGIN ERROR", error);
+        console.warn("LOGIN ERROR", error);
       });
   }
 
   // logout func
-  function LogOutFunction(e) {}
+  function LogOutFunction(e) {
+    firebase
+      .auth()
+      .signOut()
+      .then(function () {
+        setLoggedIn(false);
+        setUserInfo({});
+      })
+      .catch(function (error) {
+        console.warn("LOGOUT ERROR", error);
+      });
+  }
 
   // acc creation
   function SignUpFunction(e) {
@@ -72,32 +91,32 @@ function App() {
       .auth()
       .createUserWithEmailAndPassword(email, password)
       .then(function (response) {
-        console.log("VALID ACCOUNT CREATED FOR", email, response);
         setLoggedIn(true);
       })
       .catch(function (error) {
-        console.log("ACCOUNT CREATION ERROR", error);
+        console.warn("ACCOUNT CREATION ERROR", error);
       });
   }
+
+  // if still loading, return nothing
+  if (loading) return null;
 
   return (
     <div className="App">
       <Header loggedIn={loggedIn} LogOutFunction={LogOutFunction} />
       <Router>
-        <Switch>
-          <Route path="/signup">
-            <SignUp SignUpFunction={SignUpFunction} />
-          </Route>
-          <Route path="/user">
-            <UserProfile />
-          </Route>
-          <Route path="/login">
-            <LogIn LogInFunction={LogInFunction} />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
+        <Route exact path="/signup">
+          <SignUp SignUpFunction={SignUpFunction} />
+        </Route>
+        <Route exact path="/user">
+          <UserProfile userInfo={userInfo} />
+        </Route>
+        <Route exact path="/login">
+          <LogIn LogInFunction={LogInFunction} />
+        </Route>
+        <Route exact path="/">
+          <Home />
+        </Route>
       </Router>
     </div>
   );

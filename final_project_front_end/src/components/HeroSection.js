@@ -2,20 +2,19 @@ import React from "react";
 
 function HeroSection() {
   return (
-    <div className="HeroSection">
+    <main className="HeroSection">
       <div className="HeroSection_Left">
         <div className="HeroSection_Left_Title">
-          <p className="HeroSection_Left_Title_Content">Just Start</p>
-          <p className="HeroSection_Left_Title_Content Color">Chatting</p>
+          <p className="HeroSection_Left_Title_Content Color">Message</p>
+          <p className="HeroSection_Left_Title_Content">in a bottle</p>
         </div>
 
         <div className="HeroSection_Left_Details">
           <p className="HeroSection_Left_Details_Content">
-            No photos, no pressure
+            Life is full of waves
           </p>
           <p className="HeroSection_Left_Details_Content">
-            Just <span className="Color">your</span> hobbies and{" "}
-            <span className="Color">you</span>
+            Let your emotions <span className="Color">flow</span>{" "}
           </p>
         </div>
 
@@ -26,7 +25,7 @@ function HeroSection() {
         </div>
       </div>
       <div className="HeroSection_Right">Animated Picture???</div>
-    </div>
+    </main>
   );
 }
 

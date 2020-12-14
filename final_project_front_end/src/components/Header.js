@@ -6,7 +6,7 @@ function Header() {
     <header className="Header">
       <div>
         <a href="/">
-          <h1 className="Color">JustChat</h1>
+          <h1 className="Color">GlassBottle</h1>
         </a>
       </div>
       <nav>

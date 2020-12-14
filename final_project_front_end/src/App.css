@@ -4,14 +4,15 @@
 
 /* Thematic Default Stylings */
 .Color {
-  color: #ff4655;
+  color: #5f9db6;
 }
 
 .Anchor_Button {
   appearance: button;
   color: white;
-  border: 1px solid #ff4655;
-  background-color: #ff4655;
+  cursor: pointer;
+  border: 1px solid #5f9db6;
+  background-color: #5f9db6;
   border-radius: 25px;
   font-size: 20px;
   font-weight: 600;
@@ -25,7 +26,8 @@
 .Anchor_Button_Invis {
   appearance: button;
   color: white;
-  border: 1px solid #ff4655;
+  cursor: pointer;
+  border: 1px solid #5f9db6;
   border-radius: 25px;
   font-size: 20px;
   font-weight: 600;
@@ -178,8 +180,9 @@
 
 .SignUp_Form_Button {
   color: white;
-  border: 1px solid #ff4655;
-  background-color: #ff4655;
+  cursor: pointer;
+  border: 1px solid #5f9db6;
+  background-color: #5f9db6;
   border-radius: 4px;
   font-size: 20px;
   font-weight: 600;
@@ -205,7 +208,8 @@
 
 .SignUp_Form_Anchor_Button {
   color: white;
-  border: 1px solid #ff4655;
+  cursor: pointer;
+  border: 1px solid #5f9db6;
   background-color: #26292b;
   border-radius: 4px;
   font-size: 20px;
@@ -276,13 +280,14 @@
 }
 
 .LogInForm_Input:focus {
-  border: 2px solid #ff4655;
+  border: 2px solid #5f9db6;
 }
 
 .LogIn_Form_Button {
   color: white;
-  border: 1px solid #ff4655;
-  background-color: #ff4655;
+  cursor: pointer;
+  border: 1px solid #5f9db6;
+  background-color: #5f9db6;
   border-radius: 4px;
   font-size: 20px;
   font-weight: 600;
@@ -308,7 +313,8 @@
 
 .LogIn_Form_Anchor_Button {
   color: white;
-  border: 1px solid #ff4655;
+  cursor: pointer;
+  border: 1px solid #5f9db6;
   background-color: #26292b;
   border-radius: 4px;
   font-size: 20px;
@@ -321,3 +327,89 @@
 }
 
 /* UserProfile Styling */
+.UserProfile {
+  color: white;
+  margin: 0 auto;
+  max-width: 1080px;
+  padding: 0 25px;
+  min-height: 100vh;
+}
+
+.UserProfile_Wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.Post_Form_Wrapper {
+  width: 100%;
+}
+
+.Post_Form {
+  border: 2px solid #5f9db6;
+  border-bottom: none;
+  border-radius: 4px;
+}
+
+.Post_Form_Content {
+  background-color: #181a1b;
+  margin: 10px;
+  border: none;
+  color: white;
+  font-size: 15px;
+  height: 100px;
+  outline: 0;
+  padding: 0;
+  resize: none;
+  width: 98%;
+}
+
+.Post_Form_Content::placeholder {
+  color: lightgray;
+}
+
+.Post_Form_Button {
+  color: white;
+  cursor: pointer;
+  border: 1px solid #5f9db6;
+  background-color: #5f9db6;
+  border-left: 0;
+  border-right: 0;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 200%;
+  text-align: center;
+  text-decoration: none;
+  outline: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* User Post Listing Styling */
+
+.UserPostListing {
+  width: 100%;
+}
+
+/* User Post Card Styling */
+
+.UserPostCard {
+  border: 2px solid #5f9db6;
+  border-radius: 4px;
+  margin: 30px 0;
+  text-align: left;
+}
+
+.PostContent {
+  margin: 10px;
+}
+
+/* Reply Post Card Styling */
+.ReplyContent {
+  border: 2px solid #6378b8;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 10px;
+}

@@ -2,11 +2,11 @@ import React from "react";
 
 function SignUpForm({ SignUpFunction }) {
   return (
-    <div className="SignUp_Page_Wrapper">
+    <main className="SignUp_Page_Wrapper">
       <div className="SignUp_Form_Wrapper">
         <div className="SignUp_Form_Container">
           <p className="SignUp_Form_Title">
-            Join the <span className="Color">Chat</span>
+            Start Your <span className="Color">Journey</span>
           </p>
           <form className="SignUp_Form" onSubmit={(e) => SignUpFunction(e)}>
             <div className="SignUp_Form_Div">
@@ -49,7 +49,7 @@ function SignUpForm({ SignUpFunction }) {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 }
 

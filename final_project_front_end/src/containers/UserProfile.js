@@ -1,10 +1,13 @@
 import React from "react";
+import PostForm from "../components/PostForm";
+import UserPostLising from "../components/UserPostListing";
 
-function UserProfile() {
+function UserProfile({ userInfo }) {
   return (
     <main className="UserProfile">
-      <div>
-        <h1>Username</h1>
+      <div className="UserProfile_Wrapper">
+        <PostForm userInfo={userInfo} />
+        <UserPostLising />
       </div>
     </main>
   );
