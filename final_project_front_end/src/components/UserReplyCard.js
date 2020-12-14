@@ -4,7 +4,7 @@ import React from "react";
 function UserReplyCard({ replyData }) {
   return (
     <div className="UserReplyCard">
-      <p className="ReplyContent">{replyData}</p>
+      <p className="ReplyContent">{replyData.content}</p>
     </div>
   );
 }

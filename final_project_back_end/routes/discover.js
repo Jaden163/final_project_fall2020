@@ -14,12 +14,18 @@ router.get("/", (req, res) => {
   const uid = queryParams.uid;
   var data = [];
   messages
-    .where("uid", "==", uid)
     .get()
     .then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
-        data.push(doc.data());
+        // output new posts that the current user has not replied to or not created by user
+        if (doc.data().uid != uid && !doc.data().repliedUid.includes(uid)) {
+          data.push(doc.id);
+          data.push(doc.data());
+          return res.send(data);
+        }
       });
+      data.push(null);
+      data.push(null);
       return res.send(data);
     })
     .catch(function (error) {

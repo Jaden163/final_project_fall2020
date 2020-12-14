@@ -1,4 +1,5 @@
 import React from "react";
+import logo from "./bottle.png";
 
 function HeroSection() {
   return (
@@ -24,7 +25,9 @@ function HeroSection() {
           </a>
         </div>
       </div>
-      <div className="HeroSection_Right">Animated Picture???</div>
+      <div className="HeroSection_Right">
+        <img src={logo} />
+      </div>
     </main>
   );
 }

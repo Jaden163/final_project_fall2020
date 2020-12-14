@@ -398,7 +398,7 @@
 .UserPostCard {
   border: 2px solid #5f9db6;
   border-radius: 4px;
-  margin: 30px 0;
+  margin: 50px 0;
   text-align: left;
 }
 
@@ -412,4 +412,100 @@
   border-radius: 10px;
   margin: 20px 10px;
   padding: 10px;
+}
+
+/* Discover Page Styling */
+
+.Discover {
+  color: white;
+  font-family: "Capsule Sans Text", sans-serif;
+  margin: 0 auto;
+  max-width: 1080px;
+  padding: 0 25px;
+}
+
+.Discover_Page_Wrapper {
+  display: table;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.Discover_Form_Wrapper {
+  height: 90vh;
+  display: table-cell;
+  vertical-align: middle;
+  min-width: 800px;
+}
+
+.Discover_Form_Container {
+  margin: 10px;
+}
+
+.Discover_Content {
+  margin: 0;
+  padding: 10px;
+  text-align: left;
+  width: 98%;
+}
+
+.Discover_Form {
+  border: 2px solid #5f9db6;
+  border-radius: 2px;
+}
+
+.Discover_Form_Content {
+  background-color: #181a1b;
+  border: 2px solid #6378b8;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+  height: 50px;
+  margin: 10px 10px;
+  margin-bottom: 20px;
+  outline: 0;
+  padding: 10px;
+  resize: none;
+  width: 94%;
+}
+
+.Discover_Form_Content::placeholder {
+  color: lightgray;
+}
+.Discover_Null {
+  color: #5f9db6;
+  text-align: center;
+}
+
+.Reply_Post_Form_Button {
+  color: white;
+  cursor: pointer;
+  border: 1px solid #5f9db6;
+  background-color: #5f9db6;
+  border-left: 0;
+  border-right: 0;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 200%;
+  text-align: center;
+  text-decoration: none;
+  outline: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.Reply_Reject_Form_Button {
+  color: white;
+  cursor: pointer;
+  border: 1px solid #b82352;
+  background-color: #b82352;
+  border-left: 0;
+  border-right: 0;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 200%;
+  text-align: center;
+  text-decoration: none;
+  outline: 0;
+  padding: 0;
+  width: 100%;
 }

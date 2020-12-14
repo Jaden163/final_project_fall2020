@@ -3,13 +3,13 @@ import axios from "axios";
 
 import UserPostCard from "../components/UserPostCard";
 
-function UserPostListing() {
+function UserPostListing({ uid }) {
   const [userPosts, setUserPosts] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/fetch`)
+      .get(`http://localhost:4000/fetch?uid=${uid}`)
       .then(function (response) {
         // get request to URL
         setUserPosts(response.data);

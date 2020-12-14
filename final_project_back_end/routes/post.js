@@ -13,12 +13,12 @@ router.get("/", (req, res) => {
   const queryParams = req.query;
   const uid = queryParams.uid;
   const content = queryParams.content;
-  const timestamp = firebase.firestore.Timestamp.now();
+  const timestamp = Date.now();
   const replies = [];
-
+  const repliedUid = [];
   messages
     // create new posts or update
-    .add({ uid, content, timestamp, replies })
+    .add({ uid, content, timestamp, replies, repliedUid })
     .then(function (doc) {
       res.send("Successful Submission");
     })

@@ -24,14 +24,14 @@ app.use(function (req, res, next) {
   next();
 });
 
-const usersRoute = require("./routes/user.js");
 const postRoute = require("./routes/post.js");
 const replyRoute = require("./routes/reply.js");
 const fetchRoute = require("./routes/fetch.js");
+const discoverRoute = require("./routes/discover.js");
 
-app.use("/user", usersRoute);
 app.use("/post", postRoute);
 app.use("/reply", replyRoute);
 app.use("/fetch", fetchRoute);
+app.use("/discover", discoverRoute);
 
 app.listen(port, () => console.log(`Backend is running at port: ${port}`));

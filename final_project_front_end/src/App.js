@@ -10,6 +10,7 @@ import Home from "./containers/Home";
 import SignUp from "./containers/SignUp";
 import LogIn from "./containers/LogIn";
 import UserProfile from "./containers/UserProfile";
+import Discover from "./containers/Discover";
 
 import Header from "./components/Header";
 
@@ -105,17 +106,30 @@ function App() {
     <div className="App">
       <Header loggedIn={loggedIn} LogOutFunction={LogOutFunction} />
       <Router>
-        <Route exact path="/signup">
-          <SignUp SignUpFunction={SignUpFunction} />
-        </Route>
-        <Route exact path="/user">
-          <UserProfile userInfo={userInfo} />
-        </Route>
         <Route exact path="/login">
-          <LogIn LogInFunction={LogInFunction} />
+          {/* Not logged in */}
+          {!loggedIn ? (
+            <LogIn LogInFunction={LogInFunction} />
+          ) : (
+            <Redirect to="/" />
+          )}
+        </Route>
+        <Route exact path="/signup">
+          {!loggedIn ? (
+            <SignUp SignUpFunction={SignUpFunction} />
+          ) : (
+            <Redirect to="/" />
+          )}
+        </Route>
+        <Route exact path="/discover">
+          {!loggedIn ? (
+            <Redirect to="/login" />
+          ) : (
+            <Discover uid={userInfo.uid} />
+          )}
         </Route>
         <Route exact path="/">
-          <Home />
+          {!loggedIn ? <Home /> : <UserProfile userInfo={userInfo} />}
         </Route>
       </Router>
     </div>
