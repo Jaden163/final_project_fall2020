@@ -3,6 +3,7 @@ import UserReplyCard from "../components/UserReplyCard";
 
 // passed down from another component (ArticleListing)
 function UserPostCard({ postData }) {
+  console.log(postData);
   return (
     <div className="UserPostCard">
       <p className="PostContent">{postData.content}</p>

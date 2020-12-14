@@ -20,8 +20,6 @@ function UserProfile({ userInfo }) {
         // error handle
         console.warn(error);
       });
-
-    window.location.reload();
   }
 
   return (

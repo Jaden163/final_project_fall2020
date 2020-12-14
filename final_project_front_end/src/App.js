@@ -119,7 +119,7 @@ function App() {
             {!loggedIn ? (
               <LogIn LogInFunction={LogInFunction} />
             ) : (
-              <Redirect to="/discover" />
+              <Redirect to="/" />
             )}
           </Route>
           <Route exact path="/signup">
