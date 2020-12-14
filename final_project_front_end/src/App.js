@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Route, BrowserRouter as Router, Redirect } from "react-router-dom";
+import {
+  Route,
+  BrowserRouter as Router,
+  Redirect,
+  Switch,
+} from "react-router-dom";
 import firebase from "firebase/app";
 import "firebase/auth";
 import axios from "axios";
@@ -64,6 +69,7 @@ function App() {
         setLoggedIn(true);
       })
       .catch(function (error) {
+        alert("Log In Failed");
         console.warn("LOGIN ERROR", error);
       });
   }
@@ -95,6 +101,7 @@ function App() {
         setLoggedIn(true);
       })
       .catch(function (error) {
+        alert("Sign Up Failed");
         console.warn("ACCOUNT CREATION ERROR", error);
       });
   }
@@ -106,31 +113,36 @@ function App() {
     <div className="App">
       <Header loggedIn={loggedIn} LogOutFunction={LogOutFunction} />
       <Router>
-        <Route exact path="/login">
-          {/* Not logged in */}
-          {!loggedIn ? (
-            <LogIn LogInFunction={LogInFunction} />
-          ) : (
+        <Switch>
+          <Route exact path="/login">
+            {/* Not logged in */}
+            {!loggedIn ? (
+              <LogIn LogInFunction={LogInFunction} />
+            ) : (
+              <Redirect to="/discover" />
+            )}
+          </Route>
+          <Route exact path="/signup">
+            {!loggedIn ? (
+              <SignUp SignUpFunction={SignUpFunction} />
+            ) : (
+              <Redirect to="/" />
+            )}
+          </Route>
+          <Route exact path="/discover">
+            {!loggedIn ? (
+              <Redirect to="/login" />
+            ) : (
+              <Discover uid={userInfo.uid} />
+            )}
+          </Route>
+          <Route exact path="/">
+            {!loggedIn ? <Home /> : <UserProfile userInfo={userInfo} />}
+          </Route>
+          <Route path="/">
             <Redirect to="/" />
-          )}
-        </Route>
-        <Route exact path="/signup">
-          {!loggedIn ? (
-            <SignUp SignUpFunction={SignUpFunction} />
-          ) : (
-            <Redirect to="/" />
-          )}
-        </Route>
-        <Route exact path="/discover">
-          {!loggedIn ? (
-            <Redirect to="/login" />
-          ) : (
-            <Discover uid={userInfo.uid} />
-          )}
-        </Route>
-        <Route exact path="/">
-          {!loggedIn ? <Home /> : <UserProfile userInfo={userInfo} />}
-        </Route>
+          </Route>
+        </Switch>
       </Router>
     </div>
   );

@@ -9,7 +9,7 @@ function UserPostListing({ uid }) {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/fetch?uid=${uid}`)
+      .get(`https://pacific-earth-03601.herokuapp.com/fetch?uid=${uid}`)
       .then(function (response) {
         // get request to URL
         setUserPosts(response.data);

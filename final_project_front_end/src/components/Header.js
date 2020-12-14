@@ -18,7 +18,7 @@ function Header({ loggedIn, LogOutFunction }) {
             </a>
 
             <a
-              href="/"
+              href="/login"
               className="Anchor_Button_Invis"
               onClick={() => LogOutFunction()}
             >

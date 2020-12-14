@@ -10,7 +10,9 @@ function UserProfile({ userInfo }) {
     const content = e.currentTarget.content.value;
     const uid = userInfo.uid;
     axios
-      .get(`http://localhost:4000/post?uid=${uid}&content=${content}`)
+      .get(
+        `https://pacific-earth-03601.herokuapp.com/post?uid=${uid}&content=${content}`
+      )
       .then(function (response) {
         // get request to URL
       })

@@ -10,7 +10,7 @@ function Discover({ uid }) {
     const content = e.currentTarget.replyContent.value;
     axios
       .get(
-        `http://localhost:4000/reply/accept?uid=${uid}&content=${content}&docid=${discoverPostID}`
+        `https://pacific-earth-03601.herokuapp.com/reply/accept?uid=${uid}&content=${content}&docid=${discoverPostID}`
       )
       .then(function (response) {
         // get request to URL
@@ -26,7 +26,7 @@ function Discover({ uid }) {
     e.preventDefault();
     axios
       .get(
-        `http://localhost:4000/reply/reject?uid=${uid}&docid=${discoverPostID}`
+        `https://pacific-earth-03601.herokuapp.com/reply/reject?uid=${uid}&docid=${discoverPostID}`
       )
       .then(function (response) {
         // get request to URL
@@ -44,7 +44,7 @@ function Discover({ uid }) {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/discover?uid=${uid}`)
+      .get(`https://pacific-earth-03601.herokuapp.com/discover?uid=${uid}`)
       .then(function (response) {
         // get request to URL
         setDiscoverPostID(response.data[0]);
