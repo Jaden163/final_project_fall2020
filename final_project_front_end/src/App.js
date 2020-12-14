@@ -72,6 +72,11 @@ function App() {
         alert("Log In Failed");
         console.warn("LOGIN ERROR", error);
       });
+
+    // a quick fix to a rendering bug... no idea why component don't render on redirect
+    setTimeout(function () {
+      window.location.reload();
+    }, 200);
   }
 
   // logout func
